@@ -1,0 +1,33 @@
+body {
+  box-sizing: border-box;
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+}
+
+/**************/
+/* Typography */
+/**************/
+
+.intro,
+.pricing {
+  font-size: 15px;
+}
+
+.pageviews {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.billing,
+.benefit,
+.button,
+.pageviews {
+  font-size: 12px;
+}
+
+/**********/
+/* Layout */
+/**********/
+
+.pricing-comp-grid {
+  display: grid;
+}
