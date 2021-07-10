@@ -1,6 +1,7 @@
 body {
   box-sizing: border-box;
   font-family: Manrope, Arial, Helvetica, sans-serif;
+  background-color: hsl(230, 100%, 99%);
 }
 
 /**************/
@@ -32,11 +33,12 @@ h1,
   text-align: center;
 }
 
-.pricing-comp-flex-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.pricing-comp-grid-container {
+  display: grid;
   padding: 2em;
+  width: 80%;
+  max-width: 450px;
+  margin: 5em auto;
 }
 
 .billing--span,
@@ -47,6 +49,10 @@ h1,
 /**************/
 /* Components */
 /**************/
+.pricing-comp-grid-container {
+  background-color: #fff;
+  border-radius: 7px;
+}
 
 .slider {
   background-color: hsl(174, 77%, 80%);
