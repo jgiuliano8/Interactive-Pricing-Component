@@ -106,6 +106,7 @@ h1,
   margin: 15px auto;
 }
 
+/* This is the gray toggle bar */
 .billing--toggle {
   width: 40px;
   height: 22px;
@@ -114,6 +115,7 @@ h1,
   position: relative;
 }
 
+/*This is the little white circle within the toggle bar */
 .billing--toggle__btn {
   width: 15px;
   height: 15px;
