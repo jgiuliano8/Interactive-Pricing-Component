@@ -138,6 +138,7 @@ h1,
   left: -2px;
   border-radius: 50%;
   background-color: white;
+  transition: 250ms;
 }
 
 input:checked + .billing--toggle__btn:before {
