@@ -5,11 +5,15 @@ body {
   color: hsl(225, 20%, 60%);
 }
 
+a {
+  text-decoration: none;
+}
 /**************/
 /* Typography */
 /**************/
 
-h1 {
+h1,
+.pricing__span {
   color: hsl(227, 35%, 25%);
 }
 .intro,
@@ -22,9 +26,15 @@ h1 {
   letter-spacing: 1px;
 }
 
+.pricing__span {
+  font-size: 2rem;
+  font-weight: 800;
+  vertical-align: middle;
+}
+
 .billing,
 .benefits,
-.button,
+.button-trial,
 .pageviews {
   font-size: 12px;
 }
@@ -69,9 +79,22 @@ h1,
   margin: 1em auto;
 }
 
-.billing--span,
-.billing--toggle {
+.billing__span,
+.billing-toggle,
+.billing__discount {
   display: inline-block;
+  vertical-align: middle;
+}
+
+.billing-toggle {
+  margin: 0 1em;
+}
+
+.billing__discount {
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
+  padding: 0.25em 0.75em;
+  border-radius: 50px;
 }
 
 .benefits {
@@ -107,7 +130,7 @@ h1,
 }
 
 /* This is the gray toggle bar */
-.billing--toggle {
+.billing-toggle {
   position: relative;
   width: 40px;
   height: 22px;
@@ -117,19 +140,19 @@ h1,
 
 /* Remove actual checkbox from checkbox input */
 
-.billing--toggle input {
+.billing-toggle input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
 /* Replace checkbox with white circle "toggler" */
-.billing--toggle__btn {
+.billing-toggle__btn {
   position: absolute;
   background-color: white;
 }
 
-.billing--toggle__btn:before {
+.billing-toggle__btn:before {
   position: absolute;
   content: "";
   width: 15px;
@@ -141,6 +164,13 @@ h1,
   transition: 250ms;
 }
 
-input:checked + .billing--toggle__btn:before {
+input:checked + .billing-toggle__btn:before {
   transform: translateX(15px);
+}
+
+.button-trial {
+  color: hsl(225, 20%, 60%);
+  background-color: hsl(227, 35%, 25%);
+  padding: 0.75em 4em;
+  border-radius: 50px;
 }
