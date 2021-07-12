@@ -2,12 +2,16 @@ body {
   box-sizing: border-box;
   font-family: Manrope, Arial, Helvetica, sans-serif;
   background-color: hsl(230, 100%, 99%);
+  color: hsl(225, 20%, 60%);
 }
 
 /**************/
 /* Typography */
 /**************/
 
+h1 {
+  color: hsl(227, 35%, 25%);
+}
 .intro,
 .pricing {
   font-size: 15px;
@@ -19,10 +23,15 @@ body {
 }
 
 .billing,
-.benefit,
+.benefits,
 .button,
 .pageviews {
   font-size: 12px;
+}
+
+.benefits__span {
+  font-size: 16px;
+  color: hsl(174, 90%, 83%);
 }
 
 /**********/
@@ -65,6 +74,10 @@ h1,
   display: inline-block;
 }
 
+.benefits {
+  text-align: center;
+}
+
 /**************/
 /* Components */
 /**************/
@@ -94,4 +107,19 @@ h1,
 }
 
 .billing--toggle {
+  width: 40px;
+  height: 22px;
+  border-radius: 50px;
+  background-color: hsl(223, 50%, 87%);
+  position: relative;
+}
+
+.billing--toggle__btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 3px;
+  left: 5px;
 }
