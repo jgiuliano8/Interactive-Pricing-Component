@@ -33,12 +33,31 @@ h1,
   text-align: center;
 }
 
-.pricing-comp-grid-container {
-  display: grid;
+.pricing-comp-container-top,
+.pricing-comp-container-bottom {
   padding: 2em;
   width: 80%;
   max-width: 450px;
-  margin: 5em auto;
+}
+
+.pricing-comp-container-top {
+  display: grid;
+  grid-auto-flow: row;
+  margin: 5em auto 0;
+}
+
+.pricing-comp-container-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 5em;
+}
+
+.pricing,
+.pageviews,
+.slider,
+.billing {
+  margin: 1em auto;
 }
 
 .billing--span,
@@ -49,9 +68,21 @@ h1,
 /**************/
 /* Components */
 /**************/
-.pricing-comp-grid-container {
+
+.pricing-comp-container-top,
+.pricing-comp-container-bottom {
   background-color: #fff;
-  border-radius: 7px;
+}
+
+.pricing-comp-container-top {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom: 2px solid hsl(230, 100%, 99%);
+}
+
+.pricing-comp-container-bottom {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .slider {
@@ -60,4 +91,7 @@ h1,
   width: 100%;
   border-radius: 50px;
   margin: 15px auto;
+}
+
+.billing--toggle {
 }
