@@ -36,9 +36,17 @@
     <p class="intro">Sign-up for our 30-day trial. No credit card required.</p>
 
     <div class="pricing-comp-container-top">
-      <p class="pageviews">Pageviews</p>
+      <p class="pageviews">100k Pageviews</p>
       <p class="pricing"><span class="pricing__span">$16.00</span> /month</p>
-      <div class="slider"></div>
+      <div class="slider-container">
+        <input
+          type="range"
+          min="1"
+          max="1000000"
+          value="100000"
+          class="slider"
+        />
+      </div>
       <div class="billing">
         <span class="billing__span">Monthly Billing</span>
         <label class="billing-toggle">
@@ -46,7 +54,7 @@
           <span class="billing-toggle__btn"></span>
         </label>
         <span class="billing__span">Yearly Billing</span>
-        <span class="billing__discount">25% discount</span>
+        <span class="billing__discount">- 25%</span>
       </div>
     </div>
     <section class="pricing-comp-container-bottom">
@@ -60,10 +68,10 @@
         <p class="benefits__p">
           <span class="benefits__span">&#10004;</span> Email reports
         </p>
-        <a href="#">
-          <div class="button-trial">Start my trial</div>
-        </a>
       </div>
+      <a href="#" class="button__a">
+        <div class="button-trial">Start my trial</div>
+      </a>
     </section>
     <div class="attribution">
       Challenge by
