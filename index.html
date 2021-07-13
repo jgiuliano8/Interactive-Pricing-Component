@@ -39,18 +39,12 @@
       <p class="pageviews">100k Pageviews</p>
       <p class="pricing"><span class="pricing__span">$16.00</span> /month</p>
       <div class="slider-container">
-        <input
-          type="range"
-          min="1"
-          max="1000000"
-          value="100000"
-          class="slider"
-        />
+        <input type="range" min="1" max="5" value="3" step="1" class="slider" />
       </div>
       <div class="billing">
         <span class="billing__span">Monthly Billing</span>
         <label class="billing-toggle">
-          <input type="checkbox" unchecked />
+          <input id="billing-toggle__checkbox" type="checkbox" unchecked />
           <span class="billing-toggle__btn"></span>
         </label>
         <span class="billing__span">Yearly Billing</span>
@@ -79,5 +73,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Jeff Giuliano</a>.
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
