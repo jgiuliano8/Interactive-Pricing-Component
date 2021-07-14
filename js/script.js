@@ -10,13 +10,21 @@ const pricingObj = {
 
 function calcPricing() {
   sliderValue = document.querySelector(".slider").value;
-  toggleStatus = document.getElementById("billing-toggle__checkbox").value;
+  toggleStatus = document.getElementById("billing-toggle__checkbox").checked;
 
-  console.log(sliderValue, toggleStatus);
+  let pageviews = pricingObj.pageviewsArr[sliderValue];
+  let monthlyPricing = pricingObj.pricingArr[sliderValue];
+  let pricing = monthlyPricing;
+
+  if (toggleStatus) {
+    pricing = pricing * 12 * 0.75;
+  }
+
+  console.log(pricing, pageviews);
 }
 
-document.querySelector(".slider").addEventListener("input", calcPricing());
+document.querySelector(".slider").addEventListener("input", calcPricing);
 
 document
   .getElementById("billing-toggle__checkbox")
-  .addEventListener("change", calcPricing());
+  .addEventListener("change", calcPricing);
