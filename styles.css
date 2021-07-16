@@ -149,7 +149,7 @@ h1,
   margin: 15px auto;
 }
 
-/* The slider bar */
+/* The slider */
 .slider::-webkit-slider-thumb {
   appearance: none;
   width: 35px;
@@ -160,6 +160,13 @@ h1,
   background-repeat: no-repeat;
   border-radius: 50%;
   cursor: pointer;
+  transition: width, height, box-shadow 250ms;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  width: 38px;
+  height: 38px;
+  box-shadow: 0px 8px 15px 10px hsl(174, 86%, 45%, 0.2);
 }
 
 /* This is the gray toggle bar */
@@ -169,6 +176,7 @@ h1,
   height: 22px;
   border-radius: 50px;
   background-color: hsl(223, 50%, 87%);
+  cursor: pointer;
 }
 
 /* Remove actual checkbox from checkbox input */
@@ -201,13 +209,28 @@ input:checked + .billing-toggle__btn:before {
   transform: translateX(15px);
 }
 
+.billing-toggle__btn:hover {
+}
+
 .button-trial {
   color: hsl(225, 20%, 60%);
   background-color: hsl(227, 35%, 25%);
   padding: 0.75em 3em;
   border-radius: 50px;
   margin-top: 2em;
+  transition: box-shadow 250ms;
+  transition: padding 250ms;
 }
+
+.button-trial:hover {
+  padding: 1em 3.25em;
+  box-shadow: 0px 2px 3px 3px rgb(50, 50, 50, 0.2);
+  /* background-color: hsl(227, 35%, 25%, 0.75); */
+}
+
+/***************/
+/* Media query */
+/***************/
 
 @media screen and (min-width: 375px) {
   .pricing-comp-container-top {
