@@ -1,5 +1,6 @@
 "use strict";
 
+//Initialize global variables
 let sliderValue = 3;
 let toggleStatus = "unchecked";
 
@@ -9,8 +10,11 @@ const pricingObj = {
 };
 
 function calcPricing() {
+  //Get values for slider and toggle
   sliderValue = document.querySelector(".slider").value;
   toggleStatus = document.getElementById("billing-toggle__checkbox").checked;
+
+  //Initialize local variables
   let pageviewElement = document.querySelector(".pageviews");
   let pricingSpan = document.querySelector(".pricing__span");
   let pricingDurationSpan = document.querySelector(".pricing__duration");
