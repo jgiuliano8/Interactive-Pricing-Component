@@ -11,16 +11,27 @@ const pricingObj = {
 function calcPricing() {
   sliderValue = document.querySelector(".slider").value;
   toggleStatus = document.getElementById("billing-toggle__checkbox").checked;
+  let pageviewElement = document.querySelector(".pageviews");
+  let pricingSpan = document.querySelector(".pricing__span");
+  let pricingDurationSpan = document.querySelector(".pricing__duration");
 
-  let pageviews = pricingObj.pageviewsArr[sliderValue];
+  let pgvws = pricingObj.pageviewsArr[sliderValue];
   let monthlyPricing = pricingObj.pricingArr[sliderValue];
   let pricing = monthlyPricing;
+  let pricingDuration = "month";
 
+  //Modify # of pageviews to reflect slider position
+  pageviewElement.textContent = `${pgvws} Pageviews`;
+
+  //If billing toggle is checked, make pricing into annual pricing
   if (toggleStatus) {
     pricing = pricing * 12 * 0.75;
+    pricingDuration = "year";
   }
 
-  console.log(pricing, pageviews);
+  //Modify the pricing text appropriately
+  pricingSpan.textContent = `$${pricing}.00`;
+  pricingDurationSpan.textContent = pricingDuration;
 }
 
 document.querySelector(".slider").addEventListener("input", calcPricing);
