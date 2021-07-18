@@ -10,7 +10,7 @@ const pricingObj = {
 };
 
 function calcPricing() {
-  //Get values for slider and toggle
+  //Get values from slider and toggle
   sliderValue = document.querySelector(".slider").value;
   toggleStatus = document.getElementById("billing-toggle__checkbox").checked;
 
@@ -38,6 +38,7 @@ function calcPricing() {
   pricingDurationSpan.textContent = pricingDuration;
 }
 
+//Event listeners for sliding the slider and clicking the toggle. Both use same function.
 document.querySelector(".slider").addEventListener("input", calcPricing);
 
 document
