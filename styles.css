@@ -1,3 +1,10 @@
+:root {
+  /* Range input value. Used to calculate 
+   background length and make left side of
+   track green */
+  --bg-slider-value: 2;
+}
+
 body {
   box-sizing: border-box;
   font-family: Manrope, Arial, Helvetica, sans-serif;
@@ -8,6 +15,7 @@ body {
 a {
   text-decoration: none;
 }
+
 /**************/
 /* Typography */
 /**************/
@@ -131,6 +139,8 @@ h1,
 /* Components */
 /**************/
 
+/* The actual pricing component is made of a top
+   and bottom half, in order to get border in the middle. */
 .pricing-comp-container-top,
 .pricing-comp-container-bottom {
   background-color: #fff;
@@ -147,18 +157,63 @@ h1,
   border-bottom-right-radius: 7px;
 }
 
-/* The slider bar */
+/* The slider bar Chrome & Safari */
 .slider {
   appearance: none;
-  background-color: hsl(174, 77%, 80%);
   width: 100%;
   height: 10px;
   border-radius: 50px;
   margin: 15px auto;
 }
 
-/* The slider */
+.slider::-webkit-slider-runnable-track {
+  appearance: none;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    hsl(174, 77%, 80%) calc(var(--bg-slider-value) * 100% / 4),
+    hsl(224, 65%, 95%) calc(var(--bg-slider-value) * 100% / 4)
+  );
+  background-repeat: no-repeat;
+  height: 10px;
+  border-radius: 50px;
+}
+
+/* Firefox slider bar */
+.slider::-moz-range-track {
+  height: 10px;
+  border-radius: 50px;
+  background: hsl(224, 65%, 95%);
+}
+
+.slider::-moz-range-progress {
+  height: 10px;
+  border-radius: 50px;
+  background: hsl(174, 77%, 80%);
+}
+
+/* Microsoft slider bar */
+.slider::-ms-track {
+  border: none;
+  border-radius: 50px;
+  background: hsl(224, 65%, 95%);
+  color: transparent; /* Removes tick marks in IE */
+}
+
+.slider::-ms-fill-lower {
+  height: 10px;
+  border-radius: 50px;
+  background: hsl(174, 77%, 80%);
+}
+
+.slider::-ms-tooltip {
+  display: none;
+}
+
+/* The slider Chrome & Safari */
 .slider::-webkit-slider-thumb {
+  position: relative;
+  bottom: 13px;
   appearance: none;
   width: 35px;
   height: 35px;
@@ -175,6 +230,41 @@ h1,
   width: 38px;
   height: 38px;
   box-shadow: 0px 8px 15px 10px hsl(174, 86%, 45%, 0.2);
+}
+
+/* Firefox slider & slider hover */
+.slider::-moz-range-thumb {
+  border: none;
+  width: 35px;
+  height: 35px;
+  background-color: hsl(174, 86%, 45%);
+  background-image: url(images/icon-slider.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: width, height, box-shadow 250ms;
+}
+
+.slider::-moz-range-thumb:hover {
+  width: 38px;
+  height: 38px;
+  box-shadow: 0px 8px 15px 10px hsl(174, 86%, 45%, 0.2);
+}
+
+/* Microsoft slider & slider hover */
+.slider::-ms-thumb {
+  border: none;
+  width: 35px;
+  height: 35px;
+  /* padding: 35px; */
+  background-color: hsl(174, 86%, 45%);
+  background-image: url(images/icon-slider.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: width, height, box-shadow 250ms;
 }
 
 /* This is the gray toggle bar */
