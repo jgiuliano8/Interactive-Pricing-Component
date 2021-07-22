@@ -1,12 +1,13 @@
-/*********************/
-/* Table of Contents */
-/*                   */
-/*                   */
-/*                   */
-/*                   */
-/*                   */
-/*                   */
-/*********************/
+/***************************/
+/*    Table of Contents    */
+/*                         */
+/* Global Styles --- ln11  */
+/* Typography ------ ln33  */
+/* Layout ---------- ln69  */
+/* Components ------ ln162 */
+/* Media Queries --- ln348 */
+/*                         */
+/***************************/
 
 :root {
   /* Range input value. Used to calculate 
@@ -65,6 +66,7 @@ h1,
 /**********/
 /* Layout */
 /**********/
+
 h1,
 .intro {
   text-align: center;
@@ -334,6 +336,16 @@ input:checked + .billing-toggle__btn::before {
   transition: padding 250ms;
 }
 
+/* Submit button active/pressed/touched state styles for mobile */
+.button-trial:active {
+  padding: 1em 3.25em;
+  box-shadow: 0px 2px 3px 3px rgb(50, 50, 50, 0.2);
+}
+
+/***************/
+/* Media query */
+/***************/
+
 /* All hover states in a media query to separate hovers for mouse-enabled devices */
 @media screen and (hover: hover) and (pointer: fine) {
   /* Firefox slider thumb hover state */
@@ -356,16 +368,6 @@ input:checked + .billing-toggle__btn::before {
     box-shadow: 0px 2px 3px 3px rgb(50, 50, 50, 0.2);
   }
 }
-
-/* Submit button active/pressed/touched state styles for mobile */
-.button-trial:active {
-  padding: 1em 3.25em;
-  box-shadow: 0px 2px 3px 3px rgb(50, 50, 50, 0.2);
-}
-
-/***************/
-/* Media query */
-/***************/
 
 @media screen and (min-width: 375px) {
   .pricing-comp-container-top {

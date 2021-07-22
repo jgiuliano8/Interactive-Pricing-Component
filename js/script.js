@@ -45,25 +45,7 @@ function calcPricing() {
   //Modify the pricing text appropriately
   pricingSpan.textContent = `$${pricing}.00`;
   pricingDurationSpan.textContent = pricingDuration;
-}
-
-function isTouchDevice() {
-  return (
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
-}
-
-if (
-  /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  ) &&
-  isTouchDevice()
-) {
-  console.log("We're on a mobile device");
-}
-console.log(isTouchDevice());
+} //End function calcPricing()
 
 //Event listeners for sliding the slider and clicking the toggle. Both use same function.
 document.querySelector(".slider").addEventListener("input", calcPricing);
@@ -72,4 +54,6 @@ document
   .getElementById("billing-toggle__checkbox")
   .addEventListener("change", calcPricing);
 
+//Event listener to update CSS custom property to properly
+//set linear-gradient() stop/start widths.
 document.querySelector(".slider").addEventListener("input", setSliderWidthVar);
