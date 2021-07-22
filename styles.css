@@ -310,7 +310,8 @@ input:checked + .billing-toggle__btn:before {
 .billing-toggle__btn:hover {
 }
 
-.button-trial {
+.button-trial,
+.button-trial:visited {
   color: hsl(225, 20%, 60%);
   background-color: hsl(227, 35%, 25%);
   padding: 0.75em 3em;
