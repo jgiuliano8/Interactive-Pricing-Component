@@ -1,3 +1,13 @@
+/*********************/
+/* Table of Contents */
+/*                   */
+/*                   */
+/*                   */
+/*                   */
+/*                   */
+/*                   */
+/*********************/
+
 :root {
   /* Range input value. Used to calculate 
    background length and make left side of
@@ -59,6 +69,13 @@ h1,
 .intro {
   text-align: center;
 }
+
+/* The pricing component is composed of two halves, a top
+   and a bottom. The top is a grid container. The bottom is
+   a flex container. I did that because the elements in the
+   top half design flip-flop between desktop and mobile. They
+   don't re-flow in a normal manner.
+*/
 
 .pricing-comp-container-top,
 .pricing-comp-container-bottom {
@@ -123,6 +140,8 @@ h1,
   border-radius: 50px;
 }
 
+/* Display abbreviated mobile discount text and hide full
+     desktop text */
 .billing__discount--desktop {
   display: none;
 }
@@ -156,6 +175,16 @@ h1,
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
+
+/* The slider bar. The side of the bar left of the thumb
+   is green and the side right of the thumb is light gray.
+   This is accomplished using a CSS variable that holds the
+   current value of the range/slider input and is updated
+   dynamically via JavaScript. The CSS variable 
+   (--bg-slider-value) is used to calculate the position of
+   the thumb in percentage of the width of the slider bar.
+   This calc() is used in a linear-gradient() to produce the
+   bi-colored slider bar. */
 
 /* The slider bar Chrome & Safari */
 .slider {
@@ -210,7 +239,7 @@ h1,
   display: none;
 }
 
-/* The slider Chrome & Safari */
+/* The slider thumb Chrome & Safari */
 .slider::-webkit-slider-thumb {
   position: relative;
   bottom: 13px;
@@ -226,7 +255,7 @@ h1,
   transition: width, height, box-shadow 250ms;
 }
 
-/* Firefox slider */
+/* Firefox slider thumb */
 .slider::-moz-range-thumb {
   border: none;
   width: 35px;
@@ -240,7 +269,7 @@ h1,
   transition: width, height, box-shadow 250ms;
 }
 
-/* Microsoft slider */
+/* Microsoft slider thumb */
 .slider::-ms-thumb {
   border: none;
   width: 35px;
@@ -273,13 +302,13 @@ h1,
   height: 0;
 }
 
-/* Replace checkbox with white circle "toggler" */
+/* Replace checkbox with white circle "toggler" using :before pseudo-class */
 .billing-toggle__btn {
   position: absolute;
   background-color: white;
 }
 
-.billing-toggle__btn:before {
+.billing-toggle__btn::before {
   position: absolute;
   content: "";
   width: 15px;
@@ -291,11 +320,8 @@ h1,
   transition: 250ms;
 }
 
-input:checked + .billing-toggle__btn:before {
+input:checked + .billing-toggle__btn::before {
   transform: translateX(15px);
-}
-
-.billing-toggle__btn:hover {
 }
 
 .button-trial {
@@ -385,6 +411,8 @@ input:checked + .billing-toggle__btn:before {
     margin-top: 0;
   }
 
+  /* Display full discount text and hide abbreviated
+     mobile text */
   .billing__discount--desktop {
     display: inline-block;
   }

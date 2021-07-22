@@ -9,10 +9,12 @@ const pricingObj = {
   pricingArr: [8, 12, 16, 24, 36], //In dollars per month
 };
 
-function setBackgroundVar() {
+function setSliderWidthVar() {
   const sliderElement = document.querySelector(".slider");
-  const sliderStyles = window.getComputedStyle(sliderElement);
   sliderValue = sliderElement.value;
+
+  //Sets CSS custom property --bg-slider-value to current
+  //range input value.
   document.body.style.setProperty("--bg-slider-value", sliderValue);
 }
 
@@ -45,6 +47,24 @@ function calcPricing() {
   pricingDurationSpan.textContent = pricingDuration;
 }
 
+function isTouchDevice() {
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+
+if (
+  /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  ) &&
+  isTouchDevice()
+) {
+  console.log("We're on a mobile device");
+}
+console.log(isTouchDevice());
+
 //Event listeners for sliding the slider and clicking the toggle. Both use same function.
 document.querySelector(".slider").addEventListener("input", calcPricing);
 
@@ -52,4 +72,4 @@ document
   .getElementById("billing-toggle__checkbox")
   .addEventListener("change", calcPricing);
 
-document.querySelector(".slider").addEventListener("input", setBackgroundVar);
+document.querySelector(".slider").addEventListener("input", setSliderWidthVar);
