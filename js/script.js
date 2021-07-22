@@ -1,13 +1,20 @@
 "use strict";
 
 //Initialize global variables
-let sliderValue = 3;
+let sliderValue = 2;
 let toggleStatus = "unchecked";
 
 const pricingObj = {
   pageviewsArr: ["10K", "50K", "100K", "500K", "1M"],
   pricingArr: [8, 12, 16, 24, 36], //In dollars per month
 };
+
+function setBackgroundVar() {
+  const sliderElement = document.querySelector(".slider");
+  const sliderStyles = window.getComputedStyle(sliderElement);
+  sliderValue = sliderElement.value;
+  document.body.style.setProperty("--bg-slider-value", sliderValue);
+}
 
 function calcPricing() {
   //Get values from slider and toggle
@@ -44,3 +51,5 @@ document.querySelector(".slider").addEventListener("input", calcPricing);
 document
   .getElementById("billing-toggle__checkbox")
   .addEventListener("change", calcPricing);
+
+document.querySelector(".slider").addEventListener("input", setBackgroundVar);
