@@ -320,7 +320,7 @@ input:checked + .billing-toggle__btn:before {
   transition: padding 250ms;
 }
 
-@media not handheld and (hover: hover) {
+@media screen and (hover: hover) and (pointer: fine) {
   .button-trial:hover {
     padding: 1em 3.25em;
     box-shadow: 0px 2px 3px 3px rgb(50, 50, 50, 0.2);
