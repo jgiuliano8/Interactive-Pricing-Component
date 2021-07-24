@@ -2,10 +2,10 @@
 /*    Table of Contents    */
 /*                         */
 /* Global Styles --- ln11  */
-/* Typography ------ ln33  */
-/* Layout ---------- ln69  */
-/* Components ------ ln162 */
-/* Media Queries --- ln348 */
+/* Typography ------ ln34  */
+/* Layout ---------- ln70  */
+/* Components ------ ln179 */
+/* Media Queries --- ln377 */
 /*                         */
 /***************************/
 
@@ -20,7 +20,6 @@ body {
   box-sizing: border-box;
   font-family: Manrope, Arial, Helvetica, sans-serif;
   background-image: url(images/bg-pattern.svg);
-  /* background-color: hsl(230, 100%, 99%); */
   background-repeat: no-repeat;
   color: hsl(225, 20%, 60%);
 }
@@ -107,6 +106,7 @@ h1,
 
 .pageviews {
   grid-area: pageviews;
+  justify-self: center;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-align: center;
@@ -114,12 +114,14 @@ h1,
 
 .pricing {
   grid-area: pricing;
+  justify-self: center;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-align: center;
 }
 
 .slider-container {
+  width: 100%;
   grid-area: slider;
   align-self: center;
   -ms-grid-row: 2;
@@ -129,6 +131,7 @@ h1,
 
 .billing {
   grid-area: toggle;
+  justify-self: center;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-align: center;
@@ -139,12 +142,6 @@ h1,
   flex-direction: column;
   align-items: center;
   margin: 0 auto 5em;
-}
-
-.pricing,
-.pageviews,
-.slider-container {
-  margin: 1em auto;
 }
 
 .billing__span,
@@ -212,11 +209,11 @@ h1,
 
 /* The slider bar base styles */
 .slider {
-  overflow: visible;
+  /* overflow: visible; */
   appearance: none;
   width: 100%;
-  height: 10px;
-  border-radius: 50px;
+  height: 40px;
+  border-radius: 150px;
   margin: 15px auto;
 }
 
@@ -248,11 +245,14 @@ h1,
 }
 
 /* Microsoft slider bar */
+/* Creating a thick transparent border allows the thumb to be visible 
+   outside of the track. Then make the excess track background white to match
+   the component background. */
 .slider::-ms-track {
   width: 100%;
-  border: none;
+  border: 15px solid transparent;
   border-radius: 50px;
-  background: hsl(224, 65%, 95%);
+  background-color: white;
   color: transparent; /* Removes tick marks in IE */
 }
 
@@ -260,6 +260,12 @@ h1,
   height: 10px;
   border-radius: 50px;
   background: hsl(174, 77%, 80%);
+}
+
+.slider::-ms-fill-upper {
+  height: 10px;
+  border-radius: 50px;
+  background: hsl(224, 65%, 95%);
 }
 
 .slider::-ms-tooltip {
@@ -377,14 +383,14 @@ input:checked + .billing-toggle__btn::before {
   .slider::-moz-range-thumb:hover {
     width: 38px;
     height: 38px;
-    box-shadow: 0px 8px 15px 10px hsl(174, 86%, 45%, 0.2);
+    box-shadow: 0px 8px 15px 10px hsla(174, 86%, 45%, 0.2);
   }
 
   /* Chrome & Safari slider thumb hover state */
   .slider::-webkit-slider-thumb:hover {
     width: 38px;
     height: 38px;
-    box-shadow: 0px 8px 15px 10px hsl(174, 86%, 45%, 0.2);
+    box-shadow: 0px 8px 15px 10px hsla(174, 86%, 45%, 0.2);
   }
 
   /* Submit button hover state */
@@ -409,19 +415,13 @@ input:checked + .billing-toggle__btn::before {
     flex-direction: row;
   }
 
-  .pricing,
-  .pageviews,
-  .slider-container {
-    margin: 1em auto;
-  }
-
   .pageviews {
     align-self: center;
-    justify-self: left;
+    justify-self: start;
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-row-align: center;
-    -ms-grid-column-align: left;
+    -ms-grid-column-align: start;
   }
 
   .pricing {
@@ -438,6 +438,7 @@ input:checked + .billing-toggle__btn::before {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     -ms-grid-row-align: center;
+    -ms-grid-column-align: center;
   }
 
   .billing {
