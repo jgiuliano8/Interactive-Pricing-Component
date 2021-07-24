@@ -19,7 +19,9 @@
 body {
   box-sizing: border-box;
   font-family: Manrope, Arial, Helvetica, sans-serif;
-  background-color: hsl(230, 100%, 99%);
+  background-image: url(images/bg-pattern.svg);
+  /* background-color: hsl(230, 100%, 99%); */
+  background-repeat: no-repeat;
   color: hsl(225, 20%, 60%);
 }
 
@@ -35,7 +37,7 @@ h1,
 .pricing__span {
   color: hsl(227, 35%, 25%);
 }
-.intro,
+.intro__p,
 .pricing {
   font-size: 15px;
 }
@@ -67,9 +69,12 @@ h1,
 /* Layout */
 /**********/
 
-h1,
 .intro {
   text-align: center;
+  background-image: url(images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2em 0;
 }
 
 /* The pricing component is composed of two halves, a top
@@ -83,12 +88,15 @@ h1,
 .pricing-comp-container-bottom {
   padding: 2em;
   width: 80%;
-  max-width: 850px;
+  max-width: 550px;
 }
 
 .pricing-comp-container-top {
   display: grid;
+  display: -ms-grid;
   grid-template: 50px 75px 75px 50px / 1fr;
+  -ms-grid-columns: 1fr;
+  -ms-grid-rows: 50px 75px 75px 50px;
   grid-template-areas:
     "pageviews"
     "slider"
@@ -99,19 +107,31 @@ h1,
 
 .pageviews {
   grid-area: pageviews;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-align: center;
 }
 
 .pricing {
   grid-area: pricing;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-align: center;
 }
 
 .slider-container {
   grid-area: slider;
   align-self: center;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-align: center;
 }
 
 .billing {
   grid-area: toggle;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-align: center;
 }
 
 .pricing-comp-container-bottom {
@@ -132,7 +152,7 @@ h1,
 .billing__discount {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 0.6em;
+  margin-left: 0.2em;
 }
 
 .billing__discount {
@@ -170,12 +190,14 @@ h1,
 .pricing-comp-container-top {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  border-bottom: 4px solid hsl(230, 100%, 99%);
+  border-bottom: 4px solid hsl(221, 5, 99%);
+  box-shadow: 0px 0px 10px 3px rgb(150, 150, 150, 0.2);
 }
 
 .pricing-comp-container-bottom {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
+  box-shadow: 0px 5px 10px 3px rgb(150, 150, 150, 0.2);
 }
 
 /* The slider bar. The side of the bar left of the thumb
@@ -346,7 +368,7 @@ input:checked + .billing-toggle__btn::before {
 /* Media query */
 /***************/
 
-/* All hover states in a media query to separate hovers for mouse-enabled devices */
+/* I put all hover states in a media query to separate hovers for mouse-enabled devices */
 @media screen and (hover: hover) and (pointer: fine) {
   /* Firefox slider thumb hover state */
   .slider::-moz-range-thumb:hover {
@@ -372,6 +394,8 @@ input:checked + .billing-toggle__btn::before {
 @media screen and (min-width: 375px) {
   .pricing-comp-container-top {
     grid-template: 75px 75px 40px / repeat(3, 1fr);
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 75px 75px 40px;
     grid-template-areas:
       "pageviews . pricing"
       "slider slider slider"
@@ -389,16 +413,41 @@ input:checked + .billing-toggle__btn::before {
   }
 
   .pageviews {
+    align-self: center;
     justify-self: left;
-    align-self: center;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-row-align: center;
+    -ms-grid-column-align: left;
   }
+
   .pricing {
-    justify-self: end;
     align-self: center;
+    justify-self: end;
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-row-align: center;
+    -ms-grid-column-align: end;
+  }
+
+  .slider-container {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
   }
 
   .billing {
     justify-self: center;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    -ms-grid-column-align: center;
+  }
+
+  .billing__span,
+  .billing-toggle,
+  .billing__discount {
+    margin-left: 0.6em;
   }
 
   .benefits {
