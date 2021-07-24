@@ -191,13 +191,13 @@ h1,
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   border-bottom: 4px solid hsl(221, 5, 99%);
-  box-shadow: 0px 0px 10px 3px rgb(150, 150, 150, 0.2);
+  box-shadow: 0px 0px 10px 3px rgba(150, 150, 150, 0.2);
 }
 
 .pricing-comp-container-bottom {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  box-shadow: 0px 5px 10px 3px rgb(150, 150, 150, 0.2);
+  box-shadow: 0px 5px 10px 3px rgba(150, 150, 150, 0.2);
 }
 
 /* The slider bar. The side of the bar left of the thumb
@@ -210,8 +210,9 @@ h1,
    This calc() is used in a linear-gradient() to produce the
    bi-colored slider bar. */
 
-/* The slider bar Chrome & Safari */
+/* The slider bar base styles */
 .slider {
+  overflow: visible;
   appearance: none;
   width: 100%;
   height: 10px;
@@ -219,6 +220,7 @@ h1,
   margin: 15px auto;
 }
 
+/* The slider bar Chrome & Safari */
 .slider::-webkit-slider-runnable-track {
   appearance: none;
   border: none;
@@ -247,6 +249,7 @@ h1,
 
 /* Microsoft slider bar */
 .slider::-ms-track {
+  width: 100%;
   border: none;
   border-radius: 50px;
   background: hsl(224, 65%, 95%);
@@ -319,7 +322,6 @@ h1,
 }
 
 /* Remove actual checkbox from checkbox input */
-
 .billing-toggle input {
   opacity: 0;
   width: 0;
@@ -344,6 +346,7 @@ h1,
   transition: 250ms;
 }
 
+/* Move toggle button to the right when input is checked */
 input:checked + .billing-toggle__btn::before {
   transform: translateX(15px);
 }
@@ -361,7 +364,7 @@ input:checked + .billing-toggle__btn::before {
 /* Submit button active/pressed/touched state styles for mobile */
 .button-trial:active {
   padding: 1em 3.25em;
-  box-shadow: 0px 2px 3px 3px rgb(50, 50, 50, 0.2);
+  box-shadow: 0px 2px 3px 3px rgba(50, 50, 50, 0.2);
 }
 
 /***************/
@@ -387,7 +390,7 @@ input:checked + .billing-toggle__btn::before {
   /* Submit button hover state */
   .button-trial:hover {
     padding: 1em 3.25em;
-    box-shadow: 0px 2px 3px 3px rgb(50, 50, 50, 0.2);
+    box-shadow: 0px 2px 3px 3px rgba(50, 50, 50, 0.2);
   }
 }
 
@@ -409,7 +412,7 @@ input:checked + .billing-toggle__btn::before {
   .pricing,
   .pageviews,
   .slider-container {
-    margin: 1em 0;
+    margin: 1em auto;
   }
 
   .pageviews {
@@ -434,6 +437,7 @@ input:checked + .billing-toggle__btn::before {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
+    -ms-grid-row-align: center;
   }
 
   .billing {
