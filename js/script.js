@@ -1,8 +1,8 @@
 "use strict";
 
 //Initialize global variables
-let sliderValue = 2;
-let toggleStatus = "unchecked";
+var sliderValue = 2;
+var toggleStatus = "unchecked";
 
 const pricingObj = {
   pageviewsArr: ["10K", "50K", "100K", "500K", "1M"],
@@ -24,17 +24,17 @@ function calcPricing() {
   toggleStatus = document.getElementById("billing-toggle__checkbox").checked;
 
   //Initialize local variables
-  let pageviewElement = document.querySelector(".pageviews");
-  let pricingSpan = document.querySelector(".pricing__span");
-  let pricingDurationSpan = document.querySelector(".pricing__duration");
+  var pageviewElement = document.querySelector(".pageviews");
+  var pricingSpan = document.querySelector(".pricing__span");
+  var pricingDurationSpan = document.querySelector(".pricing__duration");
 
-  let pgvws = pricingObj.pageviewsArr[sliderValue];
-  let monthlyPricing = pricingObj.pricingArr[sliderValue];
-  let pricing = monthlyPricing;
-  let pricingDuration = "month";
+  var pgvws = pricingObj.pageviewsArr[sliderValue];
+  var monthlyPricing = pricingObj.pricingArr[sliderValue];
+  var pricing = monthlyPricing;
+  var pricingDuration = "month";
 
   //Modify # of pageviews to reflect slider position
-  pageviewElement.textContent = `${pgvws} Pageviews`;
+  pageviewElement.textContent = pgvws + " Pageviews";
 
   //If billing toggle is checked, make pricing into annual pricing
   if (toggleStatus) {
@@ -43,7 +43,7 @@ function calcPricing() {
   }
 
   //Modify the pricing text appropriately
-  pricingSpan.textContent = `$${pricing}.00`;
+  pricingSpan.textContent = "$" + pricing + ".00";
   pricingDurationSpan.textContent = pricingDuration;
 } //End function calcPricing()
 
