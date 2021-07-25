@@ -47,6 +47,10 @@ function calcPricing() {
   pricingDurationSpan.textContent = pricingDuration;
 } //End function calcPricing()
 
+const UA = navigator.userAgent;
+console.log(UA);
+console.log(window.matchMedia("(hover: hover)"));
+
 //Event listeners for sliding the slider and clicking the toggle. Both use same function.
 document.querySelector(".slider").addEventListener("change", calcPricing);
 
