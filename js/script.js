@@ -48,7 +48,7 @@ function calcPricing() {
 } //End function calcPricing()
 
 //Event listeners for sliding the slider and clicking the toggle. Both use same function.
-document.querySelector(".slider").addEventListener("input", calcPricing);
+document.querySelector(".slider").addEventListener("change", calcPricing);
 
 document
   .getElementById("billing-toggle__checkbox")
