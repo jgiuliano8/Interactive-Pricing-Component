@@ -47,9 +47,18 @@ function calcPricing() {
   pricingDurationSpan.textContent = pricingDuration;
 } //End function calcPricing()
 
-const UA = navigator.userAgent;
-console.log(UA);
-console.log(window.matchMedia("(hover: hover)"));
+// Test to see if browser is IE 11. If so it
+// inserts :hover state rules for submit button. This code enables
+// separation of IE 11 and mobile :hover state support.
+var UA = navigator.userAgent;
+const regEx = /Trident/;
+if (regEx.test(UA)) {
+  var sheet = document.styleSheets[1];
+  sheet.insertRule(
+    ".button-trial:hover { padding: 1em 3.25em; box-shadow: 0px 2px 3px 3px rgba(50, 50, 50, 0.2);}",
+    0
+  );
+}
 
 //Event listeners for sliding the slider and clicking the toggle. Both use same function.
 document.querySelector(".slider").addEventListener("change", calcPricing);
