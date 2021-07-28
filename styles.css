@@ -115,6 +115,7 @@ h1,
 .pricing {
   grid-area: pricing;
   justify-self: center;
+  align-self: center;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-align: center;
@@ -132,6 +133,7 @@ h1,
 .billing {
   grid-area: toggle;
   justify-self: center;
+  margin-top: 1.5em;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-align: center;
@@ -187,7 +189,7 @@ h1,
 .pricing-comp-container-top {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  border-bottom: 4px solid hsl(221, 5, 99%);
+  border-bottom: 2px solid #f1f5fe;
   box-shadow: 0px 0px 10px 3px rgba(150, 150, 150, 0.2);
 }
 
@@ -324,8 +326,8 @@ h1,
 /* This is the gray toggle bar */
 .billing-toggle {
   position: relative;
-  width: 40px;
-  height: 22px;
+  width: 35px;
+  height: 20px;
   border-radius: 50px;
   background-color: hsl(223, 50%, 87%);
   cursor: pointer;
@@ -350,7 +352,7 @@ h1,
   width: 15px;
   height: 15px;
   top: 3px;
-  left: -2px;
+  left: -3px;
   border-radius: 50%;
   background-color: white;
   transition: 250ms;
@@ -358,7 +360,7 @@ h1,
 
 /* Move toggle button to the right when input is checked */
 input:checked + .billing-toggle__btn::before {
-  transform: translateX(15px);
+  transform: translateX(12px);
 }
 
 .button-trial {
@@ -406,13 +408,13 @@ input:checked + .billing-toggle__btn::before {
 
 @media screen and (min-width: 375px) {
   .pricing-comp-container-top {
-    grid-template: 75px 75px 40px / repeat(3, 1fr);
-    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template: 75px 75px 40px / 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
     -ms-grid-rows: 75px 75px 40px;
     grid-template-areas:
-      "pageviews . pricing"
-      "slider slider slider"
-      "toggle toggle toggle";
+      "pageviews pricing"
+      "slider slider"
+      "toggle toggle";
   }
 
   .pricing-comp-container-bottom {
@@ -432,7 +434,7 @@ input:checked + .billing-toggle__btn::before {
     align-self: center;
     justify-self: end;
     -ms-grid-row: 1;
-    -ms-grid-column: 3;
+    -ms-grid-column: 2;
     -ms-grid-row-align: center;
     -ms-grid-column-align: end;
   }
@@ -440,7 +442,7 @@ input:checked + .billing-toggle__btn::before {
   .slider-container {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
+    -ms-grid-column-span: 2;
     -ms-grid-row-align: center;
     -ms-grid-column-align: center;
   }
@@ -449,14 +451,13 @@ input:checked + .billing-toggle__btn::before {
     justify-self: center;
     -ms-grid-row: 3;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
+    -ms-grid-column-span: 2;
     -ms-grid-column-align: center;
   }
 
   .billing__span,
-  .billing-toggle,
-  .billing__discount {
-    margin-left: 0.6em;
+  .billing-toggle {
+    margin-right: 0.6em;
   }
 
   .benefits {
