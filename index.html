@@ -2,16 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- displays site properly based on user's device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- displays site properly based on user's device -->
+
     <link
       rel="icon"
       type="image/png"
@@ -19,8 +12,21 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Interactive pricing component</title>
+    <title>Frontend Mentor | Huddle landing page with curved sections</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
@@ -32,61 +38,217 @@
     </style>
   </head>
   <body>
-    <div class="intro">
-      <h1>Simple, traffic-based pricing</h1>
-      <p class="intro__p">
-        Sign-up for our 30-day trial. No credit card required.
+    <header class="no-bg full-span">
+      <img
+        class="grid-start logo--top"
+        src="images/logo.svg"
+        alt="Huddle Logo"
+      />
+
+      <button class="btn btn--top btn--curved btn--light grid-end">
+        Try it free
+      </button>
+    </header>
+    <main>
+      <section class="no-bg full-span">
+        <h1 class="page-title col-2">
+          Build The Community Your Fans Will Love
+        </h1>
+
+        <p class="intro col-2">
+          Huddle re-imagines the way we build communities. You have a voice, but
+          so does your audience. Create connections with your users as you
+          engage in genuine discussion.
+        </p>
+
+        <button class="btn btn--curved btn--accent btn--centered col-2">
+          Get Started For Free
+        </button>
+      </section>
+
+      <img
+        class="col-2"
+        src="images/screen-mockups.svg"
+        alt="Huddle Screen
+      Mockups"
+      />
+      <section class="no-bg full-span">
+        <div class="stat first-col">
+          <img
+            class="stat__img"
+            src="images/icon-communities.svg"
+            alt="Outline of three people"
+          />
+
+          <p class="stat__number">1.4k+</p>
+          <p class="stat__text">Communities Formed</p>
+        </div>
+
+        <div class="stat second-col">
+          <img
+            class="stat__img"
+            src="images/icon-messages.svg"
+            alt="Message bubble"
+          />
+
+          <p class="stat__number">2.7m+</p>
+          <p class="stat__text">Messages Sent</p>
+        </div>
+      </section>
+      <img
+        src="images/bg-section-top-desktop-1.svg"
+        alt="Top Section curve"
+        class="full-span pixel-fix"
+      />
+
+      <section class="svg-bg full-span">
+        <div class="first-col">
+          <h2 class="section__title">Grow Together</h2>
+          <p class="section__text">
+            Generate meaningful discussions with your audience and build a
+            strong, loyal community. Think of the insightful conversations you
+            miss out on with a feedback form.
+          </p>
+        </div>
+
+        <img
+          class="second-col"
+          src="images/illustration-grow-together.svg"
+          alt="Man and Woman in Chat"
+        />
+      </section>
+
+      <img
+        src="images/bg-section-bottom-desktop-1.svg"
+        alt="Bottom Section curve"
+        class="full-span pixel-fix"
+      />
+
+      <section class="no-bg full-span">
+        <img
+          class="first-col"
+          src="images/illustration-flowing-conversation.svg"
+          alt="People conversing"
+        />
+
+        <div class="second-col">
+          <h2 class="section__title">Flowing Conversations</h2>
+          <p class="section__text">
+            You wouldn't paginate a conversation in real life, so why do it
+            online? Our threads have just-in-time loading for a more natural
+            flow.
+          </p>
+        </div>
+      </section>
+      <img
+        src="images/bg-section-top-desktop-2.svg"
+        alt="Top Section curve"
+        class="full-span pixel-fix"
+      />
+
+      <section class="svg-bg full-span">
+        <div class="first-col">
+          <h2 class="section__title">Your Users</h2>
+          <p class="section__text">
+            It takes no time at all to integrate Huddle with your app's
+            authentication solution. This means, once signed in to your app,
+            your users can start chatting immediately.
+          </p>
+        </div>
+
+        <img
+          src="images/illustration-your-users.svg"
+          alt="Group of People Carrying Chat Bubbles"
+          class="second-col"
+        />
+      </section>
+      <img
+        src="images/bg-section-bottom-desktop-2.svg"
+        alt="Bottom Section curve"
+        class="full-span pixel-fix"
+      />
+
+      <section class="no-bg full-span">
+        <h2 class="section__title col-2">Ready To Build Your Community?</h2>
+
+        <button class="btn btn--curved btn--accent col-2">
+          Get Started For Free
+        </button>
+      </section>
+
+      <img
+        src="images/bg-footer-top-desktop.svg"
+        alt="Footer curved top"
+        class="full-span pixel-fix"
+      />
+    </main>
+    <footer class="full-span">
+      <div class="newsletter second-col">
+        <h2 class="footer__subtitle">Newsletter</h2>
+        <p class="footer__text">
+          To recieve tips on how to grow your community, sign up to our weekly
+          newsletter. We’ll never send you spam or pass on your email address
+        </p>
+        <form class="subscription-form" action="#" method="post">
+          <input
+            class="email-input email-input--rounded"
+            type="email"
+            name="email"
+            id="email"
+            aria-label="Email"
+          />
+          <button class="btn btn--rounded btn--accent btn--form-submit">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <div class="contact first-col">
+        <img
+          class="footer__logo"
+          src="images/logo-white.svg"
+          alt="Huddle Logo"
+        />
+        <p class="footer__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla
+          quam, hendrerit lacinia vestibulum a, ultrices quis sem.
+        </p>
+        <p>
+          <img
+            class="footer__icon"
+            src="images/icon-phone.svg"
+            alt="Phone icon"
+          />
+          Phone: +1-543-123-4567
+        </p>
+        <p>
+          <img
+            src="images/icon-email.svg"
+            alt="Email icon"
+            class="footer__icon"
+          />
+          example@huddle.com
+        </p>
+      </div>
+
+      <p class="social first-col">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
       </p>
-    </div>
-    <div class="pricing-comp-container-top">
-      <p class="pageviews">100k Pageviews</p>
-      <p class="pricing">
-        <span class="pricing__span">$16.00</span> /<span
-          class="pricing__duration"
-          >month</span
-        >
-      </p>
-      <div class="slider-container">
-        <input type="range" min="0" max="4" value="2" step="1" class="slider" />
-      </div>
-      <div class="billing">
-        <span class="billing__span">Monthly Billing</span>
-        <label class="billing-toggle">
-          <input id="billing-toggle__checkbox" type="checkbox" unchecked />
-          <span class="billing-toggle__btn"></span>
-        </label>
-        <span class="billing__span">Yearly Billing</span>
-        <span class="billing__discount billing__discount--mobile">- 25%</span>
-        <span class="billing__discount billing__discount--desktop"
-          >25% discount</span
-        >
-      </div>
-    </div>
-    <section class="pricing-comp-container-bottom">
-      <div class="benefits">
-        <p class="benefits__p">
-          <img src="images/icon-check.svg" alt="Green check mark" /> Unlimited
-          websites
-        </p>
-        <p class="benefits__p">
-          <img src="images/icon-check.svg" alt="Green check mark" /> 100% data
-          ownership
-        </p>
-        <p class="benefits__p">
-          <img src="images/icon-check.svg" alt="Green check mark" /> Email
-          reports
-        </p>
-      </div>
-      <a href="#" class="button__a">
-        <div class="button-trial">Start my trial</div>
-      </a>
-    </section>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Jeff Giuliano</a>.
-    </div>
-    <script src="js/script.js"></script>
+
+      <small class="attribution col-2">
+        Challenge by
+        <a
+          class="attribution__a"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a class="attribution__a" href="https://github.com/jgiuliano8"
+          >Jeff Giuliano</a
+        >.
+      </small>
+    </footer>
   </body>
 </html>
