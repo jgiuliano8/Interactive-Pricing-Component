@@ -32,61 +32,75 @@
     </style>
   </head>
   <body>
-    <div class="intro">
-      <h1>Simple, traffic-based pricing</h1>
-      <p class="intro__p">
-        Sign-up for our 30-day trial. No credit card required.
-      </p>
-    </div>
-    <div class="pricing-comp-container-top">
-      <p class="pageviews">100k Pageviews</p>
-      <p class="pricing">
-        <span class="pricing__span">$16.00</span> /<span
-          class="pricing__duration"
-          >month</span
-        >
-      </p>
-      <div class="slider-container">
-        <input type="range" min="0" max="4" value="2" step="1" class="slider" />
-      </div>
-      <div class="billing">
-        <span class="billing__span">Monthly Billing</span>
-        <label class="billing-toggle">
-          <input id="billing-toggle__checkbox" type="checkbox" unchecked />
-          <span class="billing-toggle__btn"></span>
-        </label>
-        <span class="billing__span">Yearly Billing</span>
-        <span class="billing__discount billing__discount--mobile">- 25%</span>
-        <span class="billing__discount billing__discount--desktop"
-          >25% discount</span
-        >
-      </div>
-    </div>
-    <section class="pricing-comp-container-bottom">
-      <div class="benefits">
-        <p class="benefits__p">
-          <img src="images/icon-check.svg" alt="Green check mark" /> Unlimited
-          websites
+    <main>
+      <header class="intro">
+        <h1>Simple, traffic-based pricing</h1>
+        <p class="intro__p">
+          Sign-up for our 30-day trial. No credit card required.
         </p>
-        <p class="benefits__p">
-          <img src="images/icon-check.svg" alt="Green check mark" /> 100% data
-          ownership
+      </header>
+      <section class="pricing-comp-container-top">
+        <p class="pageviews">100k Pageviews</p>
+        <p class="pricing">
+          <span class="pricing__span">$16.00</span> /<span
+            class="pricing__duration"
+            >month</span
+          >
         </p>
-        <p class="benefits__p">
-          <img src="images/icon-check.svg" alt="Green check mark" /> Email
-          reports
-        </p>
-      </div>
-      <a href="#" class="button__a">
-        <div class="button-trial">Start my trial</div>
-      </a>
-    </section>
-    <div class="attribution">
+        <div class="slider-container">
+          <input
+            type="range"
+            min="0"
+            max="4"
+            value="2"
+            step="1"
+            class="slider"
+            aria-label="Main slider"
+          />
+        </div>
+        <div class="billing">
+          <span class="billing__span">Monthly Billing</span>
+          <label class="billing-toggle">
+            <input
+              id="billing-toggle__checkbox"
+              type="checkbox"
+              aria-label="Checkbox"
+            />
+            <span class="billing-toggle__btn"></span>
+          </label>
+          <span class="billing__span">Yearly Billing</span>
+          <span class="billing__discount billing__discount--mobile">- 25%</span>
+          <span class="billing__discount billing__discount--desktop"
+            >25% discount</span
+          >
+        </div>
+      </section>
+      <section class="pricing-comp-container-bottom">
+        <div class="benefits">
+          <p class="benefits__p">
+            <img src="images/icon-check.svg" alt="Green check mark" /> Unlimited
+            websites
+          </p>
+          <p class="benefits__p">
+            <img src="images/icon-check.svg" alt="Green check mark" /> 100% data
+            ownership
+          </p>
+          <p class="benefits__p">
+            <img src="images/icon-check.svg" alt="Green check mark" /> Email
+            reports
+          </p>
+        </div>
+        <a href="#" class="button__a">
+          <div class="button-trial">Start my trial</div>
+        </a>
+      </section>
+    </main>
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Jeff Giuliano</a>.
-    </div>
+    </footer>
     <script src="js/script.js"></script>
   </body>
 </html>
